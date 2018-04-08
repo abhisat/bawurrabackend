@@ -6,12 +6,17 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "controllers": "0.0.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
-    "express": "~4.16.0",
+    "express": "^4.16.3",
+    "express-authentication": "^0.3.2",
+    "express-controllers": "^1.0.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "pug": "2.0.0-beta11",
+    "sequelize": "^4.37.5",
+    "sequelize-cli": "^4.0.0",
     "sqlite3": "^4.0.0"
   }
 }

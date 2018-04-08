@@ -1,0 +1,19 @@
+extends admin
+
+block append content
+
+  form(method='POST' action='/register')
+        div.form-group
+          label(for='menu_title') Menu Title:
+          input#menu_title.form-control(type='text', placeholder='Enter the sub menu title' name='menu_title')
+        div.form-group
+          label(for='title') Title:
+          input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')
+        div.form-group
+          label(for='subtitle') Sub Title:
+          input#subtitle.form-control(type='text', placeholder='Enter the sub title for the menu item' name='subtitle')
+        div.form-group
+          label(for='body') Content:
+          textarea#body.form-control(type='text' name='body')
+
+        button.btn.btn-primary(type='submit') Submit
