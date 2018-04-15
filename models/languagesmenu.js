@@ -1,14 +1,15 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+var Sequelize = require('sequelize');
+module.exports = (sequelize) => {
   var languagesMenu = sequelize.define('languagesMenu', {
-    media: DataTypes.STRING,
-    title: DataTypes.STRING,
-    body_1: DataTypes.STRING,
-    body_2: DataTypes.STRING,
-    body_3: DataTypes.STRING,
-    body_4: DataTypes.STRING,
-    body_5: DataTypes.STRING,
-    body_6: DataTypes.STRING
+    media: Sequelize.STRING,
+    title: Sequelize.STRING,
+    body_1: Sequelize.STRING,
+    body_2: Sequelize.STRING,
+    body_3: Sequelize.STRING,
+    body_4: Sequelize.STRING,
+    body_5: Sequelize.STRING,
+    body_6: Sequelize.STRING
   }, {});
   languagesMenu.associate = function(models) {
     // associations can be defined here

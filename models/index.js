@@ -13,7 +13,7 @@ if (config.use_env_variable) {
 } else {
   var sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
-
+console.log('here');
 fs
   .readdirSync(__dirname)
   .filter(file => {
@@ -23,14 +23,14 @@ fs
     var model = sequelize['import'](path.join(__dirname, file));
     db[model.name] = model;
   });
-
+console.log('here');
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
-
+console.log('here');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
+console.log('here');
 module.exports = db;
