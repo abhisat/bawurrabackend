@@ -30,15 +30,6 @@ app.use(function(req, res, next) {
 
 
 
-database
-  .authenticate('bawurradb',null, null)
-  .then(() => {
-      console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
-
 
 // error handler
 app.use(function(err, req, res, next) {

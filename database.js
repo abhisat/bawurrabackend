@@ -1,9 +1,7 @@
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize('bawurradb',null, null, {
-  host: 'localhost',
-  dialect: 'sqlite',
-  operatorsAliases: false,
-  // SQLite only
-  storage: './bawurradb.sqlite'
-});
-module.exports = sequelize;
+var mongoose = require('mongoose');
+var mongodb = 'mongodb://localhost/bawurradb';
+mongoose.connect(mongodb);
+mongoose.Promise = global.Promise;
+var db = mongoose.connection;
+
+module.exports = db;

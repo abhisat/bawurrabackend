@@ -2,10 +2,7 @@ extends admin
 
 block append content
 
-  form(method='POST' action='/register')
-        div.form-group
-          label(for='menu_title') Menu Title:
-          input#menu_title.form-control(type='text', placeholder='Enter the sub menu title' name='menu_title')
+  form(method='POST' action='/nationsMenu/new')
         div.form-group
           label(for='title') Title:
           input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')

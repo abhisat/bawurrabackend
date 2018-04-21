@@ -1,18 +1,26 @@
 'use strict';
-var Sequelize = require('sequelize');
-module.exports = (sequelize) => {
-  var languagesMenu = sequelize.define('languagesMenu', {
-    media: Sequelize.STRING,
-    title: Sequelize.STRING,
-    body_1: Sequelize.STRING,
-    body_2: Sequelize.STRING,
-    body_3: Sequelize.STRING,
-    body_4: Sequelize.STRING,
-    body_5: Sequelize.STRING,
-    body_6: Sequelize.STRING
-  }, {});
-  languagesMenu.associate = function(models) {
-    // associations can be defined here
-  };
-  return languagesMenu;
-};
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var LanguagesModelSchema = new Schema({
+  media: String,
+  title: String,
+  body_1: String,
+  body_2: String,
+  body_3: String,
+  body_4: String,
+  body_5: String,
+  body_6: String,
+  body_7: String,
+  body_8: String,
+  body_9: String,
+  body_10: String,
+  body_11: String,
+  body_12: String,
+  body_13: String,
+  body_14: String,
+  body_15: String
+});
+
+// Compile model from schema
+exports.LanguagesModel = mongoose.model('LanguagesModel', LanguagesModelSchema );

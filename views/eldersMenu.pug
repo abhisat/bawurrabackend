@@ -1,0 +1,15 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each elder in elder_List
+    li
+      a(href=elder.title) #{elder.title}
+
+  else
+    li There are no elders.
+
+  button(class='addNew')
+    a(href='/eldersMenu/new') Create New

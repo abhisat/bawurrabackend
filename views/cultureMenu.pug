@@ -4,10 +4,12 @@ block content
   h1= title
 
   ul
-  each cultureMenu in cultureMenu_list
+  each culture in culture_List
     li
-      a(href=book.url) #{book.title}
-      |  (#{book.author.name})
+      a(href=culture.title) #{culture.title}
 
   else
     li There are no cultures.
+
+  button(class='addNew')
+    a(href='/cultureMenu/new') Create New

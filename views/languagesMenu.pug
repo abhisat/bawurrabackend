@@ -1,0 +1,15 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each language in languages_List
+    li
+      a(href=language.title) #{language.title}
+
+  else
+    li There are no languages.
+
+  button(class='addNew')
+    a(href='/languagesMenu/new') Create New

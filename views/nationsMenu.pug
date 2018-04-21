@@ -1,0 +1,15 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each nation in nations_List
+    li
+      a(href=nation.title) #{nation.title}
+
+  else
+    li There are no nations.
+
+  button(class='addNew')
+    a(href='/nationsMenu/new') Create New

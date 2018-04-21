@@ -1,12 +1,12 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
-  var nationsMenu = sequelize.define('nationsMenu', {
-    title: DataTypes.STRING,
-    sub_title: DataTypes.STRING,
-    body: DataTypes.STRING
-  }, {});
-  nationsMenu.associate = function(models) {
-    // associations can be defined here
-  };
-  return nationsMenu;
-};
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var NationsModelSchema = new Schema({
+  title: String,
+  subtitle: String,
+  body: String
+});
+
+// Compile model from schema
+exports.NationsModel = mongoose.model('NationsModel', NationsModelSchema );

@@ -1,0 +1,15 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each future in future_List
+    li
+      a(href=future.title) #{future.title}
+
+  else
+    li There are no futures.
+
+  button(class='addNew')
+    a(href='/futureMenu/new') Create New

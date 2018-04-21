@@ -1,0 +1,15 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each history in history_List
+    li
+      a(href=history.title) #{history.title}
+
+  else
+    li There are no histories.
+
+  button(class='addNew')
+    a(href='/historyMenu/new') Create New
