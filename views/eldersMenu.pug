@@ -5,8 +5,13 @@ block content
 
   ul
   each elder in elder_List
-    li
-      a(href=elder.title) #{elder.title}
+    form(method='POST' action='/eldersMenu/editOrDelete')
+      input#title.form-control(type='text', value=(elder.title), name='title')
+      input#media1.form-control(type='text', value=(elder.media_1), name='media1')
+      textarea#body.form-control(type='text', name='body') #{elder.body}
+      input#media2.form-control(type='text', value=(elder.media_2), name='media2')
+      button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+      button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 
   else
     li There are no elders.

@@ -5,8 +5,12 @@ block content
 
   ul
   each nation in nations_List
-    li
-      a(href=nation.title) #{nation.title}
+    form(method='POST' action='/nationsMenu/editOrDelete')
+      input#title.form-control(type='text', value=(nation.title), name='title')
+      input#subtitle.form-control(type='text', value=(nation.subtitle), name='subtitle')
+      textarea#body.form-control(type='text', name='body') #{nation.body}
+      button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+      button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 
   else
     li There are no nations.

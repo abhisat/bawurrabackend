@@ -5,8 +5,13 @@ block content
 
   ul
   each culture in culture_List
-    li
-      a(href=culture.title) #{culture.title}
+    form(method='POST' action='/cultureMenu/editOrDelete')
+        input#title.form-control(type='text', value=(culture.title), name='title')
+        input#media1.form-control(type='text', value=(culture.media_1), name='media1')
+        textarea#body.form-control(type='text', name='body') #{culture.body}
+        input#media2.form-control(type='text', value=(culture.media_2), name='media2')
+        button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+        button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 
   else
     li There are no cultures.

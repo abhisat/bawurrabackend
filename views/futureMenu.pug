@@ -5,8 +5,13 @@ block content
 
   ul
   each future in future_List
-    li
-      a(href=future.title) #{future.title}
+    form(method='POST' action='/futureMenu/editOrDelete')
+      input#title.form-control(type='text', value=(future.title), name='title')
+      input#media1.form-control(type='text', value=(future.media_1), name='media1')
+      textarea#body.form-control(type='text', name='body') #{future.body}
+      input#media2.form-control(type='text', value=(future.media_2), name='media2')
+      button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+      button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 
   else
     li There are no futures.

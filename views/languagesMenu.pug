@@ -5,8 +5,10 @@ block content
 
   ul
   each language in languages_List
-    li
-      a(href=language.title) #{language.title}
+    form(method='POST' action='/languagesMenu/editOrDelete')
+      input#title.form-control(type='text', value=(language.title), name='title')
+      button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+      button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 
   else
     li There are no languages.

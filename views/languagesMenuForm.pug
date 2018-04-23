@@ -5,7 +5,7 @@ block append content
   form(method='POST' action='/languagesMenu/new')
     div.form-group
       label(for='media') Media:
-      input#media1.form-control(type='text' name='media')
+      input#media1.form-control(type='file', name='media')
     div.form-group
       label(for='title') Title:
       input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')

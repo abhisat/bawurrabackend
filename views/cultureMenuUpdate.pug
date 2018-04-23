@@ -1,0 +1,19 @@
+extends admin
+
+block append content
+
+  form(method='POST' action='/cultureMenu/editUpdate')
+        div.form-group
+          label(for='title') Title:
+          input#title.form-control(type='text', value=(culture[0].title), name='title')
+        div.form-group
+          label(for='media1') Media 1:
+          input#media1.form-control(type='file', value=(culture[0].media_1), name='media1')
+        div.form-group
+          label(for='body') Body:
+          textarea#body.form-control(type='text', name='body') #{culture[0].body}
+        div.form-group
+          label(for='media1') Media 2:
+          input#media2.form-control(type='file', value=(culture[0].media_2), name='media2')
+
+        button.btn.btn-primary(type='submit') Submit

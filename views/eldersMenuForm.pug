@@ -8,12 +8,12 @@ block append content
           input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')
         div.form-group
           label(for='media1') Media 1:
-          input#media1.form-control(type='text', placeholder='Enter the sub title for the menu item' name='media1')
+          input#media1.form-control(type='file', name='media1')
         div.form-group
           label(for='body') Body:
-          textarea#body.form-control(type='text' name='body')
+          textarea#body.form-control(type='text', placeholder='Enter the body text', name='body')
         div.form-group
           label(for='media1') Media 2:
-          input#media2.form-control(type='text', placeholder='Enter the sub title for the menu item' name='media2')
+          input#media2.form-control(type='file', name='media2')
 
         button.btn.btn-primary(type='submit') Submit
