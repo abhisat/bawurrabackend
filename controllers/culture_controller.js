@@ -1,4 +1,6 @@
 var Culture = require('../models/cultureMenu');
+var media = require('../media.js');
+var Promise = require('promise');
 var cul;
 
 exports.list = function(req, res, next){
@@ -8,19 +10,45 @@ exports.list = function(req, res, next){
 }
 
 exports.create_new = function(req, res, next){
-  var culture = new Culture.CultureModel({
-    title: req.body.title,
-    media_1: req.body.media1,
-    body: req.body.body,
-    media_2: req.body.media2
-  });
+  console.log(req.files);
+var culture = new Culture.CultureModel({
+  title: req.body.title,
+  //media_1: req.files.media1[0].cloudStoragePublicUrl,
+  body: req.body.body,
+  //media_2: req.files.media2[0].cloudStoragePublicUrl
+});
 
-  culture.save(function (err) {
-  if (err) return handleError(err);
-  // saved!
+culture.save(function (err) {
+if (err) return handleError(err);
 });
 res.redirect('/cultureMenu');
 }
+//, function(callback){
+  //   console.log(callback);
+  // });
+//   .then(function (req, res, next){
+//     if (req.file && req.file.cloudStoragePublicUrl) {
+//       req.body.media = req.file.cloudStoragePublicUrl;
+//     }
+//
+//     // Save the data to the database.
+//       console.log('here');
+//   var culture = new Culture.CultureModel({
+//     title: req.body.title,
+//     media_1: req.body.media1,
+//     body: req.body.body,
+//     media_2: req.body.media2
+//   });
+//
+//   culture.save(function (err) {
+//   if (err) return handleError(err);
+//   // saved!
+// })
+  //});
+
+    // Was an image uploaded? If so, we'll use its public URL
+    // in cloud storage.
+
 exports.showForm = function (req, res, next) {
   res.render('cultureMenuForm');
 

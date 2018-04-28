@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "bawurralibrary",
+  "private_key_id": "40c6d5fc10ea1e870878d9e2fd6a4a088677ca5d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCoSP4ktjGaKohv\njm74HCcUTP9ZxX5Ed7PYvWf1nqgJwWDANA353nYGX7ssrBAPql7mgXc5gbtgAUfp\nSBKTPbY03qkbyyr8v0TwuiBlnpcWPoVWDRII1clHV+3zCEYm1J7NR/Md+wWr8PKg\n7eirwo/XoOdRa4a99nLLCt+qeLI5eXUCdnESJ7hdoRZcIegFhMf5JCXFmOlTRLVj\no97EbY/eZYhJlptD3NUR1Y/dPvmjiurOKhogjagszoyuQHWwvkhXUcN7PfEVBjXN\nrL/Wfz7BVonXmJ9nzo/+kCVbZjFlo1F354Nytn0C2144ABkvKtfGiR/mKi22vMTS\naEziPXxTAgMBAAECggEAJW87TYpT5WHxwLMT/1Av50Wrhdo3WN6x3JRhlFNLOQRR\n09+gfkVcxtUzy1+pIPr6qlcBYQL5XgVa7EtSintvVTp0rtCWiuu3V79npoNNQ677\ntSUqLln0MNEgBvB/vnKMssh/DdvBqrpqFp9loxOgMMzDuCptqkMwzPbpwz+fEcaU\n1lFWGOxUMYGWQ2+60DRp2wsum7mqEHn+1iuatDUl2RExGl7nz2g3LM//qvg6exHs\nEjjQpveQ+rIKUvMnBUmHUx4flbM0XyZp52WLhRtyPT8qQjW+Hyc/IKMYjay6gleu\ni9/CDjk88hCGTyOTEEjgiJvXhGRbo3JmW8aBSwBXdQKBgQDdXxR/3JudJc/os+7/\nVU5HGgOMvtEqfbkAzJSaRV14dRHAv1DBipimQWv2ZU9PFVEtb5AqAcCrmgQNDuy5\nS6LzVxZvKMW2uty08aWpY1zhZmw0kYVcAxobVJrVg+n6xvB99Dr76ELW3PwMEbY3\n9WTUSRdRP5oxz8INvKYL/RKCDwKBgQDCnAxWlEAPa6iMXfaw4ircKJbhRTgdwvmQ\nkkaKStL7NwRRJhehDT9BfSFyAvGdxD38nlZ06eWmlfOUfiOPbvCG/fDqNaO/2L93\nOOmqzbo356KMG3uyN49oYfU4giWcysnidP9D3494VAwTNhYA8RNgvANuVFAnCIb6\n3So8BatVfQKBgQDD/ZUhqwifNkX/yaaUq0sVikOQTbTUQOEVgwsiFr2tk0B3fSqb\nYADMWWmjiYiRBNeNOZPSjSCvDTn+8bLGTt/jP7xeCCQcJw6WqMc50/38lXjBhgEj\nOJ/ZiKtY1GTIoW90pFHAi575qkcAzIGew4VUqa2aQoxbA4zUKqx8OsAzIwKBgD9l\nICvQDXI4iuZ28Za7hmTDoCrwJpCjZDLxQ6NnLoWBbZmVxBrFuvZ1ccC3LshLFjpF\nxjo9u37h2EBmOuVNqXMAJEvXf2lOjUikNJJchC4T+gKULV5n9QJ27rAizWffM5be\nsA0HNbBoCKr1coOKBNr9REzbkGS2xWnRRCHbYu3tAoGBAL3P8/pDwzGq5+zg7btU\nvDUXqhWKUAd7vU3IWD9NBn/g94NohscJKkfQI80tkDklenSmD7l0r4B+EHj5Za15\n1CU1Sag7S52F2gv20lPq/k0tuFYGmoUt9JDKk7dImBqN5N275bw1VCmDYmJRI00e\njL6HcnhoCF3W9+/oODZMnCsI\n-----END PRIVATE KEY-----\n",
+  "client_email": "bawurrabackend@bawurralibrary.iam.gserviceaccount.com",
+  "client_id": "107709010174829572381",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bawurrabackend%40bawurralibrary.iam.gserviceaccount.com"
+}

@@ -2,7 +2,7 @@ extends admin
 
 block append content
 
-  form(method='POST' action='/cultureMenu/new')
+  form(method='POST', action='/cultureMenu/new', enctype='multipart/form-data')
         div.form-group
           label(for='title') Title:
           input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')
