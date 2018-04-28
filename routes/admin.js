@@ -34,7 +34,7 @@ router.get('/logout',
   });
 router.get('/cultureMenu', culture_controller.list);
 router.get('/cultureMenu/new', culture_controller.showForm);
-router.post('/cultureMenu/new', media.multer.fields(mediaFields), media.sendUploadToGCS, culture_controller.create_new);
+router.post('/cultureMenu/new', media.multer.fields(mediaFields), media.sendUploadToGCS);
 router.post('/cultureMenu/editOrDelete', culture_controller.editOrDelete);
 router.post('/cultureMenu/editUpdate', culture_controller.editUpdate);
 

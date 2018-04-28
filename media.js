@@ -1,5 +1,7 @@
 var Multer = require('multer');
 var aSync = require('async');
+var culture_controller = require('./controllers/culture_controller');
+var Promise = require('promise');
 
 const Storage = require('@google-cloud/storage');
 const config = require('./config/config');
@@ -12,75 +14,58 @@ const storage = Storage({
 });
 const bucket = storage.bucket(CLOUD_BUCKET);
 
-exports.multer = Multer({
+exports.multer =
+  Multer({
   storage: Multer.MemoryStorage,
 });
 
-exports.sendUploadToGCS = function (req, res, next) {
 
+exports.sendUploadToGCS = function (req, res, next) {
+var key = [];
   if (!req.files) {
-    return next();
+    culture_controller.error();
   }
   else{
     for (var fileKey in req.files){
-
-    const gcsname = Date.now() + req.files[fileKey][0].originalname;
-    const file = bucket.file(gcsname);
-
-    const stream = file.createWriteStream({
-      metadata: {
-        contentType: req.files[fileKey][0].mimetype
-      }
-    });
-
-    stream.on('error', (err) => {
-      req.files[fileKey][0].cloudStorageError = err;
-    });
-
-    stream.on('finish', () => {
-      req.files[fileKey][0].fieldname = gcsname;
-      req.files[fileKey][0].cloudStorageObject = gcsname;
-      file.makePublic().then(() => {
-        req.files[fileKey][0].cloudStoragePublicUrl = getPublicUrl(gcsname);
-      });
-    });
-
-    stream.end(req.files[fileKey][0].buffer);
-  }
-};
+      key.push(new Promise(function (resolve, reject){
+        upload(req.files[fileKey][0], function(){
+          resolve();
+        })
+    }));
+    };
+Promise.all(key)
+  .then(function () {
+    culture_controller.create_new(req, res, next);
+  })
+}
 }
 
+upload = function(rawFile, callback){
 
-// req.files.foreach((file) => {
-//   console.log(file);
-// }
-//);
-//   console.log(file);
-//   const gcsname = Date.now() + req.file.originalname;
-//   const file = bucket.file(gcsname);
-//
-//   const stream = file.createWriteStream({
-//     metadata: {
-//       contentType: req.file.mimetype
-//     }
-//   });
-//
-//   stream.on('error', (err) => {
-//     req.file.cloudStorageError = err;
-//     console.log(err);
-//     next(err);
-//   });
-//
-//   stream.on('finish', () => {
-//     console.log(req.file);
-//     req.file.cloudStorageObject = gcsname;
-//     file.makePublic().then(() => {
-//       req.file.cloudStoragePublicUrl = getPublicUrl(gcsname);
-//       next();
-//     });
-//   });
-//   stream.end(req.file.buffer);
-// }
+  const gcsname = Date.now() + rawFile.originalname;
+  const file = bucket.file(gcsname);
+
+  const stream = file.createWriteStream({
+    metadata: {
+      contentType: rawFile.mimetype
+    }
+  });
+
+  stream.on('error', (err) => {
+    rawFile.cloudStorageError = err;
+    callback(false)
+  });
+
+  stream.on('finish', () => {
+    rawFile.cloudStorageObject = gcsname;
+    file.makePublic().then(() => {
+      rawFile.cloudStoragePublicUrl = getPublicUrl(gcsname);
+      callback(true);
+    });
+  });
+
+  stream.end(rawFile.buffer);
+}
 
 getPublicUrl = function (filename) {
   return `https://storage.googleapis.com/${CLOUD_BUCKET}/${filename}`;
