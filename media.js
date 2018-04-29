@@ -22,8 +22,9 @@ exports.multer =
 
 exports.sendUploadToGCS = function (req, res, next) {
 var key = [];
+console.log('here');
   if (!req.files) {
-    culture_controller.error();
+    res.redirect('/error');
   }
   else{
     for (var fileKey in req.files){
@@ -35,7 +36,7 @@ var key = [];
     };
 Promise.all(key)
   .then(function () {
-    culture_controller.create_new(req, res, next);
+    next();
   })
 }
 }

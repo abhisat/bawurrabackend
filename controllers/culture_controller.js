@@ -19,9 +19,6 @@ exports.list = function(req, res, next) {
   });
 }
 
-exports.error = function(req, res, next) {
-  res.send("Error Uploading file.");
-}
 
 exports.create_new = function(req, res, next) {
   var culture = new Culture.CultureModel({

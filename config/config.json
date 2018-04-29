@@ -2,7 +2,7 @@
   "development": {
     "username": null,
     "password": null,
-    "database": "bawurradb",
+    "database": "mongodb://localhost/bawurradb",
     "host": "127.0.0.1",
     "dialect": "sqlite",
     "CLOUD_BUCKET": "bawurra_media",
@@ -14,7 +14,7 @@
     "database": "bawurradb",
     "host": "127.0.0.1",
     "dialect": "sqlite",
-    "CLOUD_BUCKET": "bawurra_media",
+    "CLOUD_BUCKET": "mongodb://35.189.21.94/bawurradb",
     "GCLOUD_PROJECT": "bawurralibrary"
   },
   "production": {

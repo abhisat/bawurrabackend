@@ -7,22 +7,24 @@ exports.list = function(req, res, next){
   });
 }
 
-exports.create_new = function(req, res, next){
-  console.log(req.body);
+exports.error = function(req, res, next) {
+  res.send("Error Uploading file.");
+}
+
+exports.create_new = function(req, res, next) {
   var history = new History.HistoryModel({
     title: req.body.title,
-    media_1: req.body.media1,
+    media_1: req.files.media1[0].cloudStoragePublicUrl,
     body: req.body.body,
-    media_2: req.body.media2
-
+    media_2: req.files.media2[0].cloudStoragePublicUrl
   });
 
-  history.save(function (err) {
-  if (err) return handleError(err);
-  // saved!
-});
-res.redirect('/historyMenu');
+  history.save(function(err) {
+    if (err) return handleError(err);
+  });
+  res.redirect('/historyMenu');
 }
+
 exports.showForm = function (req, res, next) {
   res.render('historyMenuForm');
 

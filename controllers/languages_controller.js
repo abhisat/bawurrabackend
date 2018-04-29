@@ -14,9 +14,9 @@ exports.list = function(req, res, next){
   });
 }
 exports.create_new = function(req, res, next){
-  console.log(req.body);
+
   var language = new Language.LanguagesModel({
-    media: req.body.media,
+    media: req.files.media[0].cloudStoragePublicUrl,
     title: req.body.title,
     body_1: req.body.body1,
     body_2: req.body.body2,
@@ -42,6 +42,7 @@ exports.create_new = function(req, res, next){
 });
 res.redirect('/languagesMenu');
 }
+
 exports.showForm = function (req, res, next) {
   res.render('languagesMenuForm');
 
