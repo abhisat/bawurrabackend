@@ -1,5 +1,4 @@
 var Multer = require('multer');
-var aSync = require('async');
 var culture_controller = require('./controllers/culture_controller');
 var Promise = require('promise');
 

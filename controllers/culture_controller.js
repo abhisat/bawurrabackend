@@ -19,6 +19,13 @@ exports.list = function(req, res, next) {
   });
 }
 
+exports.json = function(req, res, next){
+  var cultureJson = Culture.CultureModel.find({}, function(err, culture){
+    if err res.send(err);
+    else res.json(culture);
+  })
+}
+
 
 exports.create_new = function(req, res, next) {
   var culture = new Culture.CultureModel({
