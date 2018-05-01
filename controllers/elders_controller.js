@@ -1,6 +1,14 @@
 var Elder = require('../models/eldersMenu')
 var eld;
 
+
+exports.APICall = function(req, res, next){
+  var elderJson = Elder.ElderModel.find({}).lean().exec((err, elder) => {
+    if (err) res.send(err);
+    else return(elder);
+  });
+}
+
 exports.list = function(req, res, next) {
   var eldersList = Elder.ElderModel.find({}, function(err, elders) {
     res.render('eldersMenu', {
@@ -17,9 +25,9 @@ exports.error = function(req, res, next) {
 exports.create_new = function(req, res, next) {
   var elder = new Elder.ElderModel({
     title: req.body.title,
-    media_1: req.files.media1[0].cloudStoragePublicUrl,
+    media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
     body: req.body.body,
-    media_2: req.files.media2[0].cloudStoragePublicUrl
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
   });
 
   elder.save(function(err) {

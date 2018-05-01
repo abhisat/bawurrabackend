@@ -7,6 +7,13 @@ var mongoose = require('mongoose');
 var Nation = require('../models/nationsMenu');
 var nat;
 
+exports.APICall = function(req, res, next){
+  var nationJson = Nation.NationsModel.find({}).lean().exec((err, nation) => {
+    if (err) res.send(err);
+    else return(nation);
+  });
+}
+
 exports.list = function(req, res, next){
   var nationList = Nation.NationsModel.find({}, function(err, nation){
     res.render('nationsMenu', { title: 'Nations', nations_List: nation });

@@ -10,6 +10,13 @@ var mediaFields = [{
 }];
 var cul;
 
+exports.APICall = function(req, res, next){
+  var cultureJson = Culture.CultureModel.find({}).lean().exec((err, culture) => {
+    if (err) res.send(err);
+    else return culture;
+  });
+}
+
 exports.list = function(req, res, next) {
   var cultureList = Culture.CultureModel.find({}, function(err, culture) {
     res.render('cultureMenu', {
@@ -19,20 +26,16 @@ exports.list = function(req, res, next) {
   });
 }
 
-exports.json = function(req, res, next){
-  var cultureJson = Culture.CultureModel.find({}, function(err, culture){
-    if err res.send(err);
-    else res.json(culture);
-  })
+exports.error = function(req, res, next) {
+  res.send("Error Uploading file.");
 }
-
 
 exports.create_new = function(req, res, next) {
   var culture = new Culture.CultureModel({
     title: req.body.title,
-    media_1: req.files.media1[0].cloudStoragePublicUrl,
+    media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
     body: req.body.body,
-    media_2: req.files.media2[0].cloudStoragePublicUrl
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
   });
 
   culture.save(function(err) {

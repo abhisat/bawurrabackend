@@ -5,6 +5,7 @@ var history_controller = require('../controllers/history_controller');
 var future_controller = require('../controllers/future_controller');
 var nations_controller = require('../controllers/nations_controller');
 var languages_controller = require('../controllers/languages_controller');
+var restAPI = require('../controllers/restAPI');
 var authenticate = require('../authenticate');
 var media = require('../media.js');
 var router = express.Router();
@@ -36,6 +37,8 @@ router.get('/logout', function(req, res){
 router.get('/error', function(req, res){
   res.send("Error Uploading file.")
 });
+
+router.get('/serveJson', restAPI.serveJSON);
 
 router.get('/cultureMenu', culture_controller.list);
 router.get('/cultureMenu/new', culture_controller.showForm);

@@ -8,6 +8,13 @@ var config    = require(__dirname + '/../config/config.json')[env];
 var Language = require('../models/languagesMenu');
 var lang;
 
+exports.APICall = function(req, res, next){
+  var languageJson = Language.LanguageModel.find({}).lean().exec((err, language) => {
+    if (err) res.send(err);
+    else return(language);
+  });
+}
+
 exports.list = function(req, res, next){
   var languagesList = Language.LanguagesModel.find({}, function(err, language){
     res.render('languagesMenu', { title: 'Languages', languages_List: language });
@@ -16,7 +23,7 @@ exports.list = function(req, res, next){
 exports.create_new = function(req, res, next){
 
   var language = new Language.LanguagesModel({
-    media: req.files.media[0].cloudStoragePublicUrl,
+    media: typeof req.files.media !== 'undefined' ? req.files.media[0].cloudStoragePublicUrl : "No Image",
     title: req.body.title,
     body_1: req.body.body1,
     body_2: req.body.body2,
