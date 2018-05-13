@@ -1,0 +1,19 @@
+extends admin
+
+block append content
+
+  form(method='POST', action='/socialEmotionalMenu/new', enctype='multipart/form-data')
+        div.form-group
+          label(for='title') Title:
+          input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')
+        div.form-group
+          label(for='media1') Media 1:
+          input#media1.form-control(type='file', name='media1')
+        div.form-group
+          label(for='body') Body:
+          textarea#body.form-control(type='text', placeholder='Enter the body text', name='body')
+        div.form-group
+          label(for='media1') Media 2:
+          input#media2.form-control(type='file', name='media2')
+
+        button.btn.btn-primary(type='submit') Submit

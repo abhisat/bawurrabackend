@@ -55,9 +55,9 @@ exports.editOrDelete = function(req, res, next){
 exports.editUpdate = function(req, res, next){
   Future.FutureModel.findOneAndUpdate({'title': fut[0].title}, {
     title: req.body.title,
-    media_1: req.body.media1,
+    media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
     body: req.body.body,
-    media_2: req.body.media2
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image",
   }, function(err, docs){
     console.log(err);
   });

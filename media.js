@@ -1,5 +1,4 @@
 var Multer = require('multer');
-var culture_controller = require('./controllers/culture_controller');
 var Promise = require('promise');
 
 const Storage = require('@google-cloud/storage');

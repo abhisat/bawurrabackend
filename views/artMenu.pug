@@ -1,0 +1,20 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each art in arts_List
+    form(method='POST' action='/artsMenu/editOrDelete')
+        input#title.form-control(type='text', value=(art.title), name='title')
+        input#media1.form-control(type='text', value=(art.media_1), name='media1')
+        textarea#body.form-control(type='text', name='body') #{art.body}
+        input#media2.form-control(type='text', value=(art.media_2), name='media2')
+        button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+        button.btn.btn-primary(type='submit', name='option', value='delete') Delete
+
+  else
+    li There are no arts.
+
+  button(class='addNew')
+    a(href='/artsMenu/new') Create New

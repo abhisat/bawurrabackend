@@ -1,0 +1,58 @@
+extends admin
+
+block append content
+
+  form(method='POST', action='/spokenMenu/new', enctype='multipart/form-data')
+    div.form-group
+      label(for='media') Media:
+      input#media.form-control(type='file', name='media')
+    div.form-group
+      label(for='title') Title:
+      input#title.form-control(type='text', placeholder='Enter the title of the menu item' name='title')
+    div.form-group
+      label(for='body1') Content:
+      textarea#body1.form-control(type='text' name='body1')
+    div.form-group
+      label(for='body2') Content:
+      textarea#body2.form-control(type='text' name='body2')
+    div.form-group
+      label(for='body3') Content:
+      textarea#body3.form-control(type='text' name='body3')
+    div.form-group
+      label(for='body4') Content:
+      textarea#body4.form-control(type='text' name='body4')
+    div.form-group
+      label(for='body5') Content:
+      textarea#body5.form-control(type='text' name='body5')
+    div.form-group
+      label(for='body6') Content:
+      textarea#body6.form-control(type='text' name='body6')
+    div.form-group
+      label(for='body7') Content:
+      textarea#body7.form-control(type='text' name='body7')
+    div.form-group
+      label(for='body8') Content:
+      textarea#body8.form-control(type='text' name='body8')
+    div.form-group
+      label(for='body9') Content:
+      textarea#body9.form-control(type='text' name='body9')
+    div.form-group
+      label(for='body10') Content:
+      textarea#body10.form-control(type='text' name='body10')
+    div.form-group
+      label(for='body11') Content:
+      textarea#body11.form-control(type='text' name='body11')
+    div.form-group
+      label(for='body12') Content:
+      textarea#body12.form-control(type='text' name='body12')
+    div.form-group
+      label(for='body13') Content:
+      textarea#body13.form-control(type='text' name='body13')
+    div.form-group
+      label(for='body14') Content:
+      textarea#body14.form-control(type='text' name='body14')
+    div.form-group
+      label(for='body15') Content:
+      textarea#body15.form-control(type='text' name='body15')
+
+    button.btn.btn-primary(type='submit') Submit

@@ -1,0 +1,20 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each dream in dream_List
+    form(method='POST' action='/dreamingMenu/editOrDelete')
+        input#title.form-control(type='text', value=(dream.title), name='title')
+        input#media1.form-control(type='text', value=(dream.media_1), name='media1')
+        textarea#body.form-control(type='text', name='body') #{dream.body}
+        input#media2.form-control(type='text', value=(dream.media_2), name='media2')
+        button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+        button.btn.btn-primary(type='submit', name='option', value='delete') Delete
+
+  else
+    li There are no dreams. That's kinda sad!!
+
+  button(class='addNew')
+    a(href='/dreamingMenu/new') Create New

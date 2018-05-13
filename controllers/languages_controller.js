@@ -71,7 +71,7 @@ exports.editOrDelete = function(req, res, next){
 
 exports.editUpdate = function(req, res, next){
   Language.LanguagesModel.findOneAndUpdate({'title': lang[0].title}, {
-    media: req.body.media,
+    media: typeof req.files.media !== 'undefined' ? req.files.media[0].cloudStoragePublicUrl : "No Image",
     title: req.body.title,
     body_1: req.body.body1,
     body_2: req.body.body2,

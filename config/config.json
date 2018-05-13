@@ -4,7 +4,6 @@
     "password": null,
     "database": "mongodb://localhost/bawurradb",
     "host": "127.0.0.1",
-    "dialect": "sqlite",
     "CLOUD_BUCKET": "bawurra_media",
     "GCLOUD_PROJECT": "bawurralibrary"
   },
@@ -12,8 +11,7 @@
     "username": null,
     "password": null,
     "database": "mongodb://bawurra:incubator@35.189.21.94:27017/bawurradb",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
+    "host": "35.189.21.94:27017",
     "CLOUD_BUCKET": "bawurra_media",
     "GCLOUD_PROJECT": "bawurralibrary"
   },
@@ -21,8 +19,7 @@
     "username": null,
     "password": null,
     "database": "mongodb://bawurra:incubator@35.189.21.94:27017/bawurradb",
-    "host": "127.0.0.1",
-    "dialect": "sqlite",
+    "host": "35.189.21.94:27017",
     "CLOUD_BUCKET": "bawurra_media",
     "GCLOUD_PROJECT": "bawurralibrary"
   }

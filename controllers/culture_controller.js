@@ -10,15 +10,15 @@ var mediaFields = [{
 }];
 var cul;
 
-exports.APICall = function(req, res, next){
-  var cultureJson = Culture.CultureModel.find({}).lean().exec((err, culture) => {
-    if (err) res.send(err);
-    else return culture;
+exports.APICall = function(req, response, res, next){
+  var cultureJson = Culture.CultureModel.find({}).exec(function (err, culture) {
+     if (err) res.send(err);
+     else res.send(culture);
   });
 }
 
 exports.list = function(req, res, next) {
-  var cultureList = Culture.CultureModel.find({}, function(err, culture) {
+  var cultureList = Culture.CultureModel.find({}).lean().exec(function(err, culture) {
     res.render('cultureMenu', {
       title: 'Cultures',
       culture_List: culture
@@ -53,9 +53,9 @@ exports.editUpdate = function(req, res, next) {
     'title': cul[0].title
   }, {
     title: req.body.title,
-    media_1: req.body.media1,
+    media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
     body: req.body.body,
-    media_2: req.body.media2
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
   }, function(err, docs) {
     console.log(err);
   });

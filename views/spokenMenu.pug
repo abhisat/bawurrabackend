@@ -1,0 +1,17 @@
+extends admin
+
+block content
+  h1= title
+
+  ul
+  each spoken in spoken_List
+    form(method='POST' action='/spokenMenu/editOrDelete')
+      input#title.form-control(type='text', value=(spoken.title), name='title')
+      button.btn.btn-primary(type='submit', name='option', value='edit') Edit
+      button.btn.btn-primary(type='submit', name='option', value='delete') Delete
+
+  else
+    li There is nothing spoken.
+
+  button(class='addNew')
+    a(href='/spokenMenu/new') Create New
