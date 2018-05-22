@@ -5,7 +5,7 @@ var eld;
 exports.APICall = function(req, res, next){
   var elderJson = Elder.ElderModel.find({}).lean().exec((err, elder) => {
     if (err) res.send(err);
-    else return(elder);
+    else res.json(elder);
   });
 }
 

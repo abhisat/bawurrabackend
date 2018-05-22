@@ -4,7 +4,7 @@ var fut;
 exports.APICall = function(req, res, next){
   var elderJson = Future.FutureModel.find({}).lean().exec((err, future) => {
     if (err) res.send(err);
-    else return(future);
+    else res.json(future);
   });
 }
 

@@ -44,6 +44,17 @@ router.get('/error', function(req, res){
 
 router.get('/serveJson', restAPI.serveJSON);
 
+router.get('/servearts', art_controller.APICall);
+router.get('/serveculture', art_controller.APICall);
+router.get('/servedreams', art_controller.APICall);
+router.get('/serveelders', art_controller.APICall);
+router.get('/servefuture', art_controller.APICall);
+router.get('/servehistory', art_controller.APICall);
+router.get('/servelanguages', art_controller.APICall);
+router.get('/servenations', art_controller.APICall);
+router.get('/servesocialemotional', art_controller.APICall);
+router.get('/servespoken', art_controller.APICall);
+
 router.get('/cultureMenu', culture_controller.list);
 router.get('/cultureMenu/new', culture_controller.showForm);
 router.post('/cultureMenu/new', media.multer.fields(mediaFieldsSubmenu), media.sendUploadToGCS, culture_controller.create_new);

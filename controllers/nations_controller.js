@@ -4,13 +4,13 @@ var basename  = path.basename(__filename);
 var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 var mongoose = require('mongoose');
-var Nation = require('../models/nationsMenu');
+var Nation = require('../models/nationsmenu');
 var nat;
 
 exports.APICall = function(req, res, next){
   var nationJson = Nation.NationsModel.find({}).lean().exec((err, nation) => {
     if (err) res.send(err);
-    else return(nation);
+    else res.json(nation);
   });
 }
 

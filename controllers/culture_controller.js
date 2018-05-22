@@ -13,7 +13,7 @@ var cul;
 exports.APICall = function(req, response, res, next){
   var cultureJson = Culture.CultureModel.find({}).exec(function (err, culture) {
      if (err) res.send(err);
-     else res.send(culture);
+     else res.json(culture);
   });
 }
 

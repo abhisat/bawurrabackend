@@ -4,7 +4,7 @@ var socialEmotionalCopy;
 exports.APICall = function(req, res, next){
   var socialEmotionalJson = SocialEmotional.SocialEmotionalModel.find({}).lean().exec((err, socialEmotional) => {
     if (err) res.send(err);
-    else return(socialEmotional);
+    else res.json(socialEmotional);
   });
 }
 

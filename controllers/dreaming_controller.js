@@ -4,7 +4,7 @@ var dream;
 exports.APICall = function(req, res, next){
   var dreamingJson = Dreaming.DreamingModel.find({}).lean().exec((err, dreams) => {
     if (err) res.send(err);
-    else return(dreams);
+    else res.json(dreams);
   });
 }
 

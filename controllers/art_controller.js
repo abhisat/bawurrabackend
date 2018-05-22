@@ -4,7 +4,7 @@ var artCopy;
 exports.APICall = function(req, res, next){
   var artJson = Art.ArtModel.find({}).lean().exec((err, arts) => {
     if (err) res.send(err);
-    else return(arts);
+    else res.json(arts);
   });
 }
 

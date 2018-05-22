@@ -5,13 +5,13 @@ var basename  = path.basename(__filename);
 var env       = process.env.NODE_ENV || 'development';
 var config    = require(__dirname + '/../config/config.json')[env];
 
-var Language = require('../models/languagesMenu');
+var Language = require('../models/languagesmenu');
 var lang;
 
 exports.APICall = function(req, res, next){
   var languageJson = Language.LanguageModel.find({}).lean().exec((err, language) => {
     if (err) res.send(err);
-    else return(language);
+    else res.json(language);
   });
 }
 

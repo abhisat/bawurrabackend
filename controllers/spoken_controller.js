@@ -11,7 +11,7 @@ var spokenCopy;
 exports.APICall = function(req, res, next){
   var spokenJson = Spoken.SpokenModel.find({}).lean().exec((err, spoken) => {
     if (err) res.send(err);
-    else return(spoken);
+    else res.json(spoken);
   });
 }
 

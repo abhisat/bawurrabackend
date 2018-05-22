@@ -3,7 +3,7 @@ var History = require('../models/historyMenu')
 exports.APICall = function(req, res, next){
   var historyJson = History.HistoryModel.find({}).lean().exec((err, history) => {
     if (err) res.send(err);
-    else return(history);
+    else res.json(history);
   });
 }
 
