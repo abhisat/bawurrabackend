@@ -45,15 +45,15 @@ router.get('/error', function(req, res){
 router.get('/serveJson', restAPI.serveJSON);
 
 router.get('/servearts', art_controller.APICall);
-router.get('/serveculture', art_controller.APICall);
-router.get('/servedreams', art_controller.APICall);
-router.get('/serveelders', art_controller.APICall);
-router.get('/servefuture', art_controller.APICall);
-router.get('/servehistory', art_controller.APICall);
-router.get('/servelanguages', art_controller.APICall);
-router.get('/servenations', art_controller.APICall);
-router.get('/servesocialemotional', art_controller.APICall);
-router.get('/servespoken', art_controller.APICall);
+router.get('/serveculture', culture_controller.APICall);
+router.get('/servedreams', dreaming_controller.APICall);
+router.get('/serveelders', elders_controller.APICall);
+router.get('/servefuture', future_controller.APICall);
+router.get('/servehistory', history_controller.APICall);
+router.get('/servelanguages', languages_controller.APICall);
+router.get('/servenations', nations_controller.APICall);
+router.get('/servesocialemotional', socialemotional_controller.APICall);
+router.get('/servespoken', spoken_controller.APICall);
 
 router.get('/cultureMenu', culture_controller.list);
 router.get('/cultureMenu/new', culture_controller.showForm);
@@ -81,9 +81,9 @@ router.post('/futureMenu/editUpdate', media.multer.fields(mediaFieldsSubmenu), m
 
 router.get('/nationsMenu', nations_controller.list);
 router.get('/nationsMenu/new', nations_controller.showForm);
-router.post('/nationsMenu/new', media.multer.fields(mediaFieldsSubmenu), media.sendUploadToGCS, nations_controller.create_new);
+router.post('/nationsMenu/new', nations_controller.create_new);
 router.post('/nationsMenu/editOrDelete', nations_controller.editOrDelete);
-router.post('/nationsMenu/editUpdate', media.multer.fields(mediaFieldsSubmenu), media.sendUploadToGCS, nations_controller.editUpdate);
+router.post('/nationsMenu/editUpdate', nations_controller.editUpdate);
 
 router.get('/languagesMenu', languages_controller.list);
 router.get('/languagesMenu/new', languages_controller.showForm);

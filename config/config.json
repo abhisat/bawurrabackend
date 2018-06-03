@@ -10,16 +10,16 @@
   "test": {
     "username": null,
     "password": null,
-    "database": "mongodb://bawurra:incubator@35.189.21.94:27017/bawurradb",
-    "host": "35.189.21.94:27017",
+    "database": "mongodb://bawurraAdmin:17!7!96A@35.189.6.244:27017/bawurradb",
+    "host": "35.189.6.244:27017",
     "CLOUD_BUCKET": "bawurra_media",
     "GCLOUD_PROJECT": "bawurralibrary"
   },
   "production": {
     "username": null,
     "password": null,
-    "database": "mongodb://bawurra:incubator@35.189.21.94:27017/bawurradb",
-    "host": "35.189.21.94:27017",
+    "database": "mongodb://bawurraAdmin:17!7!96A@35.189.6.244:27017/bawurradb",
+    "host": "35.189.6.244:27017",
     "CLOUD_BUCKET": "bawurra_media",
     "GCLOUD_PROJECT": "bawurralibrary"
   }

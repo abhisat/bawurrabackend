@@ -10,8 +10,8 @@ var mediaFields = [{
 }];
 var cul;
 
-exports.APICall = function(req, response, res, next){
-  var cultureJson = Culture.CultureModel.find({}).exec(function (err, culture) {
+exports.APICall = function(req, res, next){
+  Culture.CultureModel.find({}).lean().exec(function (err, culture) {
      if (err) res.send(err);
      else res.json(culture);
   });
