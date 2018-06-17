@@ -7,6 +7,9 @@ block content
   each spoken in spoken_List
     form(method='POST' action='/spokenMenu/editOrDelete')
       input#title.form-control(type='text', value=(spoken.title), name='title')
+      input#media1.form-control(type='text', value=(spoken.media_1), name='media1')
+      textarea#body.form-control(type='text', name='body') #{spoken.body}
+      input#media2.form-control(type='text', value=(spoken.media_2), name='media2')
       button.btn.btn-primary(type='submit', name='option', value='edit') Edit
       button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 

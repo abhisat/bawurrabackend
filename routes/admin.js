@@ -111,8 +111,8 @@ router.post('/dreamingMenu/editUpdate', media.multer.fields(mediaFieldsSubmenu),
 
 router.get('/spokenMenu', spoken_controller.list);
 router.get('/spokenMenu/new', spoken_controller.showForm);
-router.post('/spokenMenu/new', media.multer.fields(mediaFieldsSpokenLanguage), media.sendUploadToGCS, spoken_controller.create_new);
+router.post('/spokenMenu/new', media.multer.fields(mediaFieldsSubmenu), media.sendUploadToGCS, spoken_controller.create_new);
 router.post('/spokenMenu/editOrDelete', spoken_controller.editOrDelete);
-router.post('/spokenMenu/editUpdate', media.multer.fields(mediaFieldsSpokenLanguage), media.sendUploadToGCS, spoken_controller.editUpdate);
+router.post('/spokenMenu/editUpdate', media.multer.fields(mediaFieldsSubmenu), media.sendUploadToGCS, spoken_controller.editUpdate);
 
 module.exports = router;

@@ -9,7 +9,7 @@ var Language = require('../models/languagesmenu');
 var lang;
 
 exports.APICall = function(req, res, next){
-  var languageJson = Language.LanguageModel.find({}).lean().exec((err, language) => {
+  var languageJson = Language.LanguagesModel.find({}).lean().exec((err, language) => {
     if (err) res.send(err);
     else res.json(language);
   });

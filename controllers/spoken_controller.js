@@ -20,34 +20,18 @@ exports.list = function(req, res, next){
     res.render('spokenMenu', { title: 'Spoken', spoken_List: spokens });
   });
 }
-exports.create_new = function(req, res, next){
-
-  var new_spoken = new Spoken.SpokenModel({
-    media: typeof req.files.media !== 'undefined' ? req.files.media[0].cloudStoragePublicUrl : "No Image",
+exports.create_new = function(req, res, next) {
+  var spoken = new Spoken.SpokenModel({
     title: req.body.title,
-    body_1: req.body.body1,
-    body_2: req.body.body2,
-    body_3: req.body.body3,
-    body_4: req.body.body4,
-    body_5: req.body.body5,
-    body_6: req.body.body6,
-    body_7: req.body.body7,
-    body_8: req.body.body8,
-    body_9: req.body.body9,
-    body_10: req.body.body10,
-    body_11: req.body.body11,
-    body_12: req.body.body12,
-    body_13: req.body.body13,
-    body_14: req.body.body14,
-    body_15: req.body.body15
-
+    media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
+    body: req.body.body,
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
   });
 
-  new_spoken.save(function (err) {
-  if (err) return handleError(err);
-  // saved!
-});
-res.redirect('/spokenMenu');
+  spoken.save(function(err) {
+    if (err) return handleError(err);
+  });
+  res.redirect('/spokenMenu');
 }
 
 exports.showForm = function (req, res, next) {
@@ -69,27 +53,17 @@ exports.editOrDelete = function(req, res, next){
   }
 }
 
-exports.editUpdate = function(req, res, next){
-  Spoken.SpokenModel.findOneAndUpdate({'title': spokenCopy[0].title}, {
-    media: typeof req.files.media !== 'undefined' ? req.files.media[0].cloudStoragePublicUrl : "No Image",
+exports.editUpdate = function(req, res, next) {
+  Spoken.SpokenModel.findOneAndUpdate({
+    'title': cul[0].title
+  }, {
     title: req.body.title,
-    body_1: req.body.body1,
-    body_2: req.body.body2,
-    body_3: req.body.body3,
-    body_4: req.body.body4,
-    body_5: req.body.body5,
-    body_6: req.body.body6,
-    body_7: req.body.body7,
-    body_8: req.body.body8,
-    body_9: req.body.body9,
-    body_10: req.body.body10,
-    body_11: req.body.body11,
-    body_12: req.body.body12,
-    body_13: req.body.body13,
-    body_14: req.body.body14,
-    body_15: req.body.body15
-  }, function(err, docs){
+    media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
+    body: req.body.body,
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
+  }, function(err, docs) {
     console.log(err);
   });
+
   res.redirect('/spokenMenu');
 }
