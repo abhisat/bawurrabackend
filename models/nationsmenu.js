@@ -5,7 +5,8 @@ var Schema = mongoose.Schema;
 var NationsModelSchema = new Schema({
   title: String,
   subtitle: String,
-  body: String
+  body: String,
+  video: String
 });
 
 // Compile model from schema

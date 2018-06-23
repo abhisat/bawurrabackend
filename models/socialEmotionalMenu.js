@@ -7,7 +7,8 @@ var SocialEmotionalModelSchema = new Schema({
   title: String,
   media_1: String,
   body: String,
-  media_2: String
+  media_2: String,
+  video: String
 });
 
 // Compile model from schema

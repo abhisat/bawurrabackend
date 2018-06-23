@@ -35,7 +35,8 @@ exports.create_new = function(req, res, next) {
     title: req.body.title,
     media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
     body: req.body.body,
-    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image",
+    video: req.body.video
   });
 
   culture.save(function(err) {
@@ -55,7 +56,8 @@ exports.editUpdate = function(req, res, next) {
     title: req.body.title,
     media_1: typeof req.files.media1 !== 'undefined' ? req.files.media1[0].cloudStoragePublicUrl : "No Image",
     body: req.body.body,
-    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image"
+    media_2: typeof req.files.media2 !== 'undefined' ? req.files.media2[0].cloudStoragePublicUrl : "No Image",
+    video: req.body.video
   }, function(err, docs) {
     console.log(err);
   });

@@ -15,5 +15,8 @@ block append content
         div.form-group
           label(for='media1') Media 2:
           input#media2.form-control(type='file', value=(spoken_List[0].media_2), name='media2')
+        div.form-group
+          label(for='video') Video Link(optional):
+          input#video.form-control(type='text', value=(spoken_List[0].video), name='video')
 
         button.btn.btn-primary(type='submit') Submit

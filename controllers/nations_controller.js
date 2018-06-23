@@ -23,7 +23,8 @@ exports.create_new = function(req, res, next){
   var nation = new Nation.NationsModel({
     title: req.body.title,
     subtitle: req.body.subtitle,
-    body: req.body.body
+    body: req.body.body,
+    video: req.body.video
   });
 
   nation.save(function (err) {
@@ -55,7 +56,8 @@ exports.editUpdate = function(req, res, next){
   Nation.NationsModel.findOneAndUpdate({'title': nat[0].title}, {
     title: req.body.title,
     subtitle: req.body.subtitle,
-    body: req.body.body
+    body: req.body.body,
+    video: req.body.video
   }, function(err, docs){
     console.log(err);
   });

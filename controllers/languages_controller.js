@@ -39,7 +39,9 @@ exports.create_new = function(req, res, next){
     body_12: req.body.body12,
     body_13: req.body.body13,
     body_14: req.body.body14,
-    body_15: req.body.body15
+    body_15: req.body.body15,
+    body_16: req.body.body16,
+    video: req.body.video
 
   });
 
@@ -87,7 +89,9 @@ exports.editUpdate = function(req, res, next){
     body_12: req.body.body12,
     body_13: req.body.body13,
     body_14: req.body.body14,
-    body_15: req.body.body15
+    body_15: req.body.body15,
+    body_16: req.body.body16,
+    video: req.body.video
   }, function(err, docs){
     console.log(err);
   });

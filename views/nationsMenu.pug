@@ -9,6 +9,7 @@ block content
       input#title.form-control(type='text', value=(nation.title), name='title')
       input#subtitle.form-control(type='text', value=(nation.subtitle), name='subtitle')
       textarea#body.form-control(type='text', name='body') #{nation.body}
+      input#video.form-control(type='text', value=(nation.video), name='video')
       button.btn.btn-primary(type='submit', name='option', value='edit') Edit
       button.btn.btn-primary(type='submit', name='option', value='delete') Delete
 

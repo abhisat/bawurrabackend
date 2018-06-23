@@ -19,7 +19,9 @@ var LanguagesModelSchema = new Schema({
   body_12: String,
   body_13: String,
   body_14: String,
-  body_15: String
+  body_15: String,
+  body_16: String,
+  video: String
 });
 
 // Compile model from schema

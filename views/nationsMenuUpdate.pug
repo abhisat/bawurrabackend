@@ -12,5 +12,8 @@ block append content
         div.form-group
           label(for='body') Content:
           textarea#body.form-control(type='text', name='body') #{nation[0].body}
+        div.form-group
+          label(for='video') Video Link(optional):
+          input#video.form-control(type='text', value=(nation[0].video), name='video')
 
         button.btn.btn-primary(type='submit') Submit
