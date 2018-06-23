@@ -10,7 +10,7 @@ exports.APICall = function(req, res, next){
 
 exports.list = function(req, res, next){
   var DreamingList = Dreaming.DreamingModel.find({}, function(err, dreams){
-    res.render('dreamingMenu', { title: 'Dreams', dream_List: dreams });
+    res.render('dreamingMenu', { title: 'Community', dream_List: dreams });
   });
 }
 

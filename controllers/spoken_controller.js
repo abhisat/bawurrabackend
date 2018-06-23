@@ -17,7 +17,7 @@ exports.APICall = function(req, res, next){
 
 exports.list = function(req, res, next){
   var spokenList = Spoken.SpokenModel.find({}, function(err, spokens){
-    res.render('spokenMenu', { title: 'Spoken', spoken_List: spokens });
+    res.render('spokenMenu', { title: 'Music', spoken_List: spokens });
   });
 }
 exports.create_new = function(req, res, next) {
