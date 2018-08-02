@@ -23,7 +23,7 @@ exports.list = function(req, res, next){
 exports.create_new = function(req, res, next){
 
   var language = new Language.LanguagesModel({
-    icon: typeof req.files.icon !== 'undefined' ? req.files.icon[0].cloudStoragePublicUrl : "No Image"
+    icon: typeof req.files.icon !== 'undefined' ? req.files.icon[0].cloudStoragePublicUrl : "No Image",
     media: typeof req.files.media !== 'undefined' ? req.files.media[0].cloudStoragePublicUrl : "No Image",
     title: req.body.title,
     body_1: req.body.body1,
@@ -74,7 +74,7 @@ exports.editOrDelete = function(req, res, next){
 
 exports.editUpdate = function(req, res, next){
   Language.LanguagesModel.findOneAndUpdate({'title': lang[0].title}, {
-    icon: typeof req.files.icon !== 'undefined' ? req.files.icon[0].cloudStoragePublicUrl : "No Image"
+    icon: typeof req.files.icon !== 'undefined' ? req.files.icon[0].cloudStoragePublicUrl : "No Image",
     media: typeof req.files.media !== 'undefined' ? req.files.media[0].cloudStoragePublicUrl : "No Image",
     title: req.body.title,
     body_1: req.body.body1,
