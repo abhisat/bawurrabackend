@@ -6,7 +6,8 @@ var NationsModelSchema = new Schema({
   title: String,
   subtitle: String,
   body: String,
-  video: String
+  video: String,
+  icon: String
 });
 
 // Compile model from schema

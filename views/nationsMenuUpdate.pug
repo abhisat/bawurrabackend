@@ -15,5 +15,8 @@ block append content
         div.form-group
           label(for='video') Video Link(optional):
           input#video.form-control(type='text', value=(nation[0].video), name='video')
+        div.form-group
+          label(for='icon') Icon:
+          input#icon.form-control(type='file', value=(nation[0].icon), name='icon')
 
         button.btn.btn-primary(type='submit') Submit

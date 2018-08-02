@@ -4,6 +4,9 @@ block append content
 
   form(method='POST', action='/languagesMenu/new', enctype='multipart/form-data')
     div.form-group
+      label(for='icon') Icon:
+      input#icon.form-control(type='file', name='icon')
+    div.form-group
       label(for='media') Media:
       input#media.form-control(type='file', name='media')
     div.form-group

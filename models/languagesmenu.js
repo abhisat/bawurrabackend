@@ -3,6 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var LanguagesModelSchema = new Schema({
+  icon: String,
   media: String,
   title: String,
   body_1: String,

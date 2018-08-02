@@ -24,7 +24,8 @@ exports.create_new = function(req, res, next){
     title: req.body.title,
     subtitle: req.body.subtitle,
     body: req.body.body,
-    video: req.body.video
+    video: req.body.video,
+    icon: typeof req.files.icon !== 'undefined' ? req.files.icon[0].cloudStoragePublicUrl : "No Image"
   });
 
   nation.save(function (err) {
@@ -57,7 +58,8 @@ exports.editUpdate = function(req, res, next){
     title: req.body.title,
     subtitle: req.body.subtitle,
     body: req.body.body,
-    video: req.body.video
+    video: req.body.video,
+    icon: typeof req.files.icon !== 'undefined' ? req.files.icon[0].cloudStoragePublicUrl : "No Image"
   }, function(err, docs){
     console.log(err);
   });

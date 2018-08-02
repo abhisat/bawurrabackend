@@ -14,7 +14,9 @@ var authenticate = require('../authenticate');
 var media = require('../media.js');
 var router = express.Router();
 var mediaFieldsSubmenu = [{name: "media1", maxCount: 1}, {name: "media2", maxCount: 1}];
-var mediaFieldsSpokenLanguage = [{name: "media", maxCount: 1}];
+var mediaFieldsLanguage = [{name: "media", maxCount: 1}, {name: "icon", maxCount: 1}];
+var mediaFieldsNation = [{name: "icon", maxCount: 1}];
+
 
 /* GET admin page. */
 
@@ -81,15 +83,15 @@ router.post('/futureMenu/editUpdate', media.multer.fields(mediaFieldsSubmenu), m
 
 router.get('/nationsMenu', nations_controller.list);
 router.get('/nationsMenu/new', nations_controller.showForm);
-router.post('/nationsMenu/new', nations_controller.create_new);
+router.post('/nationsMenu/new', media.multer.fields(mediaFieldsNation), media.sendUploadToGCS, nations_controller.create_new);
 router.post('/nationsMenu/editOrDelete', nations_controller.editOrDelete);
-router.post('/nationsMenu/editUpdate', nations_controller.editUpdate);
+router.post('/nationsMenu/editUpdate', media.multer.fields(mediaFieldsNation), media.sendUploadToGCS, nations_controller.editUpdate);
 
 router.get('/languagesMenu', languages_controller.list);
 router.get('/languagesMenu/new', languages_controller.showForm);
-router.post('/languagesMenu/new', media.multer.fields(mediaFieldsSpokenLanguage), media.sendUploadToGCS, languages_controller.create_new);
+router.post('/languagesMenu/new', media.multer.fields(mediaFieldsLanguage), media.sendUploadToGCS, languages_controller.create_new);
 router.post('/languagesMenu/editOrDelete', languages_controller.editOrDelete);
-router.post('/languagesMenu/editUpdate', media.multer.fields(mediaFieldsSpokenLanguage), media.sendUploadToGCS, languages_controller.editUpdate);
+router.post('/languagesMenu/editUpdate', media.multer.fields(mediaFieldsLanguage), media.sendUploadToGCS, languages_controller.editUpdate);
 
 router.get('/socialEmotionalMenu', socialemotional_controller.list);
 router.get('/socialEmotionalMenu/new', socialemotional_controller.showForm);
